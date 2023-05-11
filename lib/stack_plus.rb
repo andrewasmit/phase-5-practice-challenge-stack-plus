@@ -1,17 +1,29 @@
 class StackPlus
+  attr_accessor :stack
+
   def initialize
-    # your code here
+    @stack = []
   end
 
   def push(value)
-    # your code here
+    stack.push(value)
   end
 
   def pop
-    # your code here
+    if stack.length > 0
+      stack.pop 
+    else
+      -1
+    end
   end
 
   def increment(n)
-    # your code here
+      [n, stack.length].min.times do |i|
+        stack[i] += 1
+      end
+    stack[stack.length - 1]
   end
+
+
+
 end
